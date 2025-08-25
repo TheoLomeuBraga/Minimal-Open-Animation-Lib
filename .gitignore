@@ -1,0 +1,6 @@
+
+
+
+# Godot 4+ specific ignores
+/template_psx_charter_2.0_godot_example/.godot/
+/template_psx_charter_2.0_godot_example/android/
