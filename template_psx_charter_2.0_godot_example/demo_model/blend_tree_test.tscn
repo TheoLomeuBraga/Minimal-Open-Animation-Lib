@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://duuvejt256rhi"]
+
+[ext_resource type="PackedScene" uid="uid://bgphfjdvxrdoy" path="res://demo_model/demo_model.glb" id="1_gxwe7"]
+[ext_resource type="AnimationLibrary" uid="uid://ddbgu76sa8vpm" path="res://animations/template_psx_charter.glb" id="2_uxu2w"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_jdv72"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_821ad"]
+animation = &"template_psx_charter/automatic_shot"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1wwj0"]
+animation = &"template_psx_charter/walk_legs_only"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_frosc"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_cswv6"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_00l7t"]
+graph_offset = Vector2(-1099.52, 186.052)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_jdv72")
+nodes/Add2/position = Vector2(60, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_1wwj0")
+nodes/Animation/position = Vector2(-800, 180)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_821ad")
+"nodes/Animation 2/position" = Vector2(-900, 460)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_cswv6")
+nodes/TimeScale/position = Vector2(-224.365, 126.951)
+"nodes/TimeScale 2/node" = SubResource("AnimationNodeTimeScale_frosc")
+"nodes/TimeScale 2/position" = Vector2(-400, 440)
+node_connections = [&"Add2", 0, &"TimeScale", &"Add2", 1, &"TimeScale 2", &"TimeScale", 0, &"Animation", &"TimeScale 2", 0, &"Animation 2", &"output", 0, &"Add2"]
+
+[node name="demo_model" instance=ExtResource("1_gxwe7")]
+
+[node name="GeneralSkeleton" parent="metarig" index="0"]
+bones/0/position = Vector3(0, 1.14791, -0.076753)
+bones/0/rotation = Quaternion(2.98023e-08, 0, 0, 1)
+bones/1/rotation = Quaternion(-0.00773269, 0.000514983, -0.000809541, 0.99997)
+bones/2/rotation = Quaternion(-0.00478378, 0.000302625, -0.000502795, 0.999988)
+bones/4/rotation = Quaternion(-2.98023e-08, 0, 0, 1)
+bones/6/rotation = Quaternion(0.0784081, -1.18842e-07, 9.34698e-09, 0.996921)
+bones/12/rotation = Quaternion(-0.251482, 0.798107, -0.490436, -0.243423)
+bones/13/rotation = Quaternion(0.513018, -0.571503, 0.328793, 0.549629)
+bones/14/rotation = Quaternion(-2.18861e-08, 0.707107, -2.18861e-08, 0.707107)
+bones/19/rotation = Quaternion(-0.436596, 0.592169, -0.517778, -0.436608)
+bones/20/rotation = Quaternion(0.0152423, 0.707316, -0.00976879, 0.706666)
+bones/21/rotation = Quaternion(0.0672688, -0.698256, -0.0637186, 0.709827)
+bones/31/rotation = Quaternion(4.91436e-08, 0.269652, 0.962958, -4.43791e-09)
+bones/32/rotation = Quaternion(8.87667e-16, 0.905491, -0.424366, 1.49872e-15)
+bones/33/rotation = Quaternion(9.31154e-09, 0.713646, -0.700507, -6.11876e-09)
+bones/39/rotation = Quaternion(3.75246e-08, -0.102528, 0.99473, 2.15011e-09)
+bones/40/rotation = Quaternion(-7.65787e-17, 0.996136, -0.0878295, 1.3909e-15)
+bones/41/rotation = Quaternion(-2.11696e-08, 0.65047, -0.759532, -6.36927e-10)
+
+[node name="Plane_001" parent="metarig/GeneralSkeleton" index="0"]
+transform = Transform3D(0.999995, 0.00299147, 0.000781791, -0.00264473, 0.958548, -0.28492, -0.00160171, 0.284916, 0.958551, 0.00183846, 2.02015, 0.0696542)
+
+[node name="Cube_009" parent="metarig/GeneralSkeleton" index="1"]
+transform = Transform3D(0.999995, 0.00299147, 0.000781791, -0.00264473, 0.958548, -0.28492, -0.00160171, 0.284916, 0.958551, 0.00183846, 2.02015, 0.0696542)
+
+[node name="Cube_017" parent="metarig/GeneralSkeleton" index="2"]
+transform = Transform3D(0.999995, 0.00299147, 0.000781791, -0.00264473, 0.958548, -0.28492, -0.00160171, 0.284916, 0.958551, 0.00213458, 2.17948, -0.00854581)
+
+[node name="Cube_010" parent="metarig/GeneralSkeleton" index="3"]
+transform = Transform3D(0.999995, 0.0026037, 0.00166787, -0.00264463, 0.999683, 0.0250284, -0.00160218, -0.0250327, 0.999685, 0.00142342, 1.92664, -0.0350618)
+
+[node name="Cube_005" parent="metarig/GeneralSkeleton" index="4"]
+transform = Transform3D(0.0835489, 0.984189, -0.156174, -0.834245, 0.154798, 0.529219, 0.545028, 0.086072, 0.833988, 0.301325, 1.48905, -0.109683)
+
+[node name="Cube_004" parent="metarig/GeneralSkeleton" index="5"]
+transform = Transform3D(0.083549, 0.984189, -0.156174, -0.834244, 0.154798, 0.52922, 0.545028, 0.0860719, 0.833988, 0.287805, 1.73357, -0.208721)
+
+[node name="Cube_003" parent="metarig/GeneralSkeleton" index="6"]
+transform = Transform3D(0.38967, 0.906548, 0.162257, -0.677259, 0.401467, -0.616559, -0.624081, 0.130365, 0.770407, 0.196277, 1.83618, -0.0598683)
+
+[node name="Cube_016" parent="metarig/GeneralSkeleton" index="7"]
+transform = Transform3D(-0.0538915, -0.996432, 0.0649498, 0.0102955, 0.0644864, 0.997866, 0.998493, -0.0544452, -0.00678343, -0.227212, 1.7119, 0.464106)
+
+[node name="Cube_015" parent="metarig/GeneralSkeleton" index="8"]
+transform = Transform3D(-0.0714345, -0.99501, 0.069656, -0.173468, 0.0811633, 0.981489, 0.982245, -0.0580293, 0.1784, -0.221224, 1.80627, 0.217468)
+
+[node name="Cube_014" parent="metarig/GeneralSkeleton" index="9"]
+transform = Transform3D(-0.0815679, -0.994354, 0.0678639, -0.207432, 0.0835368, 0.974676, 0.974843, -0.0654252, 0.213074, -0.19387, 1.83762, -0.058995)
+
+[node name="Cube_008" parent="metarig/GeneralSkeleton" index="10"]
+transform = Transform3D(0.999995, 0.0026037, 0.00166787, -0.00264463, 0.999683, 0.0250283, -0.00160218, -0.0250326, 0.999685, 0.000974474, 1.75427, -0.0307454)
+
+[node name="Cube_006" parent="metarig/GeneralSkeleton" index="11"]
+transform = Transform3D(0.999998, 0.00161107, 0.00104246, -0.001627, 0.999879, 0.0154641, -0.00101742, -0.0154657, 0.99988, 0.000266296, 1.4871, -0.0365853)
+
+[node name="Cube" parent="metarig/GeneralSkeleton" index="12"]
+transform = Transform3D(1, 2.82822e-08, 8.97655e-08, 4.1227e-09, 0.939702, -0.341997, -9.40251e-08, 0.341997, 0.939701, 0.0983306, 0.138857, 0.112157)
+
+[node name="Cube_001" parent="metarig/GeneralSkeleton" index="13"]
+transform = Transform3D(1, 4.84721e-08, 8.5963e-08, -1.79563e-08, 0.945894, -0.324478, -9.70399e-08, 0.324478, 0.945893, 0.0973474, 0.700901, 0.306058)
+
+[node name="Cube_002" parent="metarig/GeneralSkeleton" index="14"]
+transform = Transform3D(1, -3.50504e-08, 9.22532e-08, -1.79563e-08, 0.854576, 0.519327, -9.70399e-08, -0.519327, 0.854576, 0.0983192, 1.04368, 0.0753096)
+
+[node name="Cube_011" parent="metarig/GeneralSkeleton" index="15"]
+transform = Transform3D(-1, 4.48939e-08, 4.54305e-08, 3.35226e-08, 0.974366, -0.224969, 5.43657e-08, 0.224969, 0.974366, -0.0983306, 0.0410722, -0.364897)
+
+[node name="Cube_012" parent="metarig/GeneralSkeleton" index="16"]
+transform = Transform3D(-1, 2.47732e-08, 7.09729e-08, -3.41703e-09, 0.928181, -0.372129, 7.50945e-08, 0.372129, 0.928181, -0.0973474, 0.592842, -0.152706)
+
+[node name="Cube_013" parent="metarig/GeneralSkeleton" index="17"]
+transform = Transform3D(-1, 1.19722e-08, 7.42127e-08, -3.41705e-09, 0.978976, -0.203975, 7.50945e-08, 0.203975, 0.978976, -0.0983192, 1.01722, -0.0761513)
+
+[node name="Cube_007" parent="metarig/GeneralSkeleton" index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.96047e-08, 0, 5.96047e-08, 1, 0, 1.14931, -0.021553)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="metarig" index="1"]
+libraries = {
+&"template_psx_charter": ExtResource("2_uxu2w")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="metarig" index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_00l7t")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Add2/add_amount = 1.0
+parameters/TimeScale/scale = 5.0
+"parameters/TimeScale 2/scale" = 2.0
